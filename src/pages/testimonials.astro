@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PageHero from '../components/PageHero.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Testimonials" description="Hear from parents, students, and alumni about their experience at Faith Christian Schools Karu.">
@@ -86,7 +87,7 @@ import PageHero from '../components/PageHero.astro';
       <h2 class="text-3xl font-heading font-bold text-white mb-4">Join Our Community</h2>
       <p class="text-white/80 mb-8">Experience the Faith Christian Schools difference for yourself.</p>
       <a
-        href="/admissions"
+        href={`${base}admissions/`}
         class="inline-flex items-center px-8 py-3.5 bg-gold text-maroon-dark font-semibold rounded-lg hover:bg-gold-light transition-colors"
       >
         Apply Now

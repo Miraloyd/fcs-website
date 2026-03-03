@@ -9,13 +9,14 @@ interface Props {
   showMotto?: boolean;
 }
 
+const base = import.meta.env.BASE_URL;
 const {
   title,
   subtitle,
   ctaText = "Apply Now",
-  ctaHref = "/admissions",
+  ctaHref = `${base}admissions/`,
   secondaryText = "Explore Academics",
-  secondaryHref = "/academics",
+  secondaryHref = `${base}academics/`,
   showMotto = true,
 } = Astro.props;
 ---

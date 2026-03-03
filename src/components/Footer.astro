@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-maroon-dark text-white">
@@ -31,15 +32,15 @@ const currentYear = new Date().getFullYear();
         <h3 class="font-heading font-bold text-lg mb-4">Quick Links</h3>
         <ul class="space-y-2">
           {[
-            { href: "/about", label: "About Us" },
-            { href: "/academics", label: "Academics" },
-            { href: "/admissions", label: "Admissions" },
-            { href: "/student-life", label: "Student Life" },
-            { href: "/gallery", label: "Gallery" },
-            { href: "/testimonials", label: "Testimonials" },
-            { href: "/scholarships", label: "Scholarships" },
-            { href: "/news", label: "News & Events" },
-            { href: "/contact", label: "Contact Us" },
+            { href: `${base}about/`, label: "About Us" },
+            { href: `${base}academics/`, label: "Academics" },
+            { href: `${base}admissions/`, label: "Admissions" },
+            { href: `${base}student-life/`, label: "Student Life" },
+            { href: `${base}gallery/`, label: "Gallery" },
+            { href: `${base}testimonials/`, label: "Testimonials" },
+            { href: `${base}scholarships/`, label: "Scholarships" },
+            { href: `${base}news/`, label: "News & Events" },
+            { href: `${base}contact/`, label: "Contact Us" },
           ].map(link => (
             <li>
               <a href={link.href} class="text-white/70 text-sm hover:text-gold transition-colors">

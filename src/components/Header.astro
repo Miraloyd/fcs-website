@@ -1,13 +1,14 @@
 ---
+const base = import.meta.env.BASE_URL;
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/academics", label: "Academics" },
-  { href: "/admissions", label: "Admissions" },
-  { href: "/student-life", label: "Student Life" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
+  { href: `${base}`, label: "Home" },
+  { href: `${base}about/`, label: "About Us" },
+  { href: `${base}academics/`, label: "Academics" },
+  { href: `${base}admissions/`, label: "Admissions" },
+  { href: `${base}student-life/`, label: "Student Life" },
+  { href: `${base}gallery/`, label: "Gallery" },
+  { href: `${base}news/`, label: "News" },
+  { href: `${base}contact/`, label: "Contact" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -17,7 +18,7 @@ const currentPath = Astro.url.pathname;
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo + School Name -->
-      <a href="/" class="flex items-center gap-3 group">
+      <a href={`${base}`} class="flex items-center gap-3 group">
         <img
           src="https://res.cloudinary.com/dgvktekep/image/upload/w_60,h_60,c_fill,q_auto,f_auto/v1770294148/fcs/uploads/xxe18ouwcljc86y4wloy.jpg"
           alt="Faith Christian Schools Logo"
@@ -50,7 +51,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- CTA Button -->
       <a
-        href="/admissions"
+        href={`${base}admissions/`}
         class="hidden lg:inline-flex items-center px-5 py-2.5 bg-maroon text-white text-sm font-semibold rounded-lg hover:bg-maroon-dark transition-colors duration-200"
       >
         Apply Now
@@ -87,7 +88,7 @@ const currentPath = Astro.url.pathname;
         </a>
       ))}
       <a
-        href="/admissions"
+        href={`${base}admissions/`}
         class="block px-4 py-3 mt-2 bg-maroon text-white text-sm font-semibold rounded-lg text-center hover:bg-maroon-dark transition-colors"
       >
         Apply Now
