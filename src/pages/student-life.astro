@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Student Life" description="Discover the vibrant student life at Faith Christian Schools -- clubs, sports, activities, and community.">
+  <Header slot="header" />
+
+  <PageHero title="Student Life" breadcrumb="Student Life" />
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <h2 class="section-title">Beyond the Classroom</h2>
+        <p class="section-subtitle">
+          At Faith Christian Schools, education extends well beyond textbooks. Our students grow through sports, clubs, community service, and enrichment programmes that develop the whole child.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Sports & Athletics",
+            description: "Football, athletics, table tennis, and inter-house competitions on our sports field and court facilities. Building teamwork, discipline, and physical fitness.",
+            icon: "⚽",
+            colour: "bg-green-50 border-green-200",
+          },
+          {
+            title: "Clubs & Societies",
+            description: "Debate club, science club, literary and drama society, press club, and more. Students explore their passions and develop leadership skills.",
+            icon: "🎭",
+            colour: "bg-purple-50 border-purple-200",
+          },
+          {
+            title: "Christian Fellowship",
+            description: "Weekly chapel services, Bible study groups, and prayer meetings that nurture spiritual growth and build a strong moral foundation.",
+            icon: "✝️",
+            colour: "bg-amber-50 border-amber-200",
+          },
+          {
+            title: "Community Service",
+            description: "Students participate in community outreach programmes, learning the value of giving back and making a positive impact in Karu and beyond.",
+            icon: "🤝",
+            colour: "bg-blue-50 border-blue-200",
+          },
+          {
+            title: "Cultural Activities",
+            description: "Cultural day celebrations, talent shows, and creative arts exhibitions that celebrate Nigeria's rich cultural heritage and student creativity.",
+            icon: "🎨",
+            colour: "bg-red-50 border-red-200",
+          },
+          {
+            title: "Excursions & Field Trips",
+            description: "Educational visits to museums, historical sites, and organisations that bring classroom learning to life through real-world experiences.",
+            icon: "🚌",
+            colour: "bg-teal-50 border-teal-200",
+          },
+        ].map(item => (
+          <div class={`p-8 rounded-2xl border-2 ${item.colour} transition-transform hover:-translate-y-1 duration-300`}>
+            <span class="text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-xl text-maroon mb-3">{item.title}</h3>
+            <p class="text-text-light text-sm leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Life -->
+  <section class="py-20 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center mb-12">A Day at Faith Christian Schools</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          {[
+            { time: "7:30 AM", activity: "Arrival and Morning Assembly", detail: "Students gather for devotion, anthem, and announcements" },
+            { time: "8:00 AM", activity: "Morning Lessons", detail: "Core subjects including English, Mathematics, and Sciences" },
+            { time: "10:30 AM", activity: "Break Time", detail: "Snacks and supervised recreation" },
+            { time: "11:00 AM", activity: "Mid-Morning Lessons", detail: "Continued academic sessions and practical work" },
+            { time: "1:00 PM", activity: "Lunch Break", detail: "Lunch and afternoon recreation" },
+            { time: "2:00 PM", activity: "Afternoon Sessions", detail: "Electives, clubs, sports, and enrichment activities" },
+            { time: "3:30 PM", activity: "Closing / After-School", detail: "Prep time, pick-up, or school bus departure" },
+          ].map(item => (
+            <div class="flex gap-6 p-5 bg-white rounded-xl border border-cream-dark">
+              <div class="w-20 shrink-0 text-right">
+                <span class="text-maroon font-bold text-sm">{item.time}</span>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-maroon text-sm mb-0.5">{item.activity}</h3>
+                <p class="text-text-muted text-xs">{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

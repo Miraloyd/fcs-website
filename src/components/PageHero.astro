@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  breadcrumb?: string;
+}
+
+const { title, breadcrumb } = Astro.props;
+---
+
+<section class="bg-gradient-to-r from-maroon to-maroon-dark py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {breadcrumb && (
+      <nav class="mb-3 text-sm">
+        <a href="/" class="text-white/60 hover:text-gold transition-colors">Home</a>
+        <span class="text-white/40 mx-2">/</span>
+        <span class="text-gold">{breadcrumb}</span>
+      </nav>
+    )}
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white">
+      {title}
+    </h1>
+  </div>
+</section>

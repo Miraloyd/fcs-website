@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout title="Academics" description="Explore our dual curriculum -- Nigerian (NERDC) and Cambridge International (IGCSE/A-Levels). From Montessori early years to senior secondary.">
+  <Header slot="header" />
+
+  <PageHero title="Academics" breadcrumb="Academics" />
+
+  <!-- Curriculum Overview -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <h2 class="section-title">Our Curriculum</h2>
+        <p class="section-subtitle">
+          We offer a dual curriculum that combines the Nigerian national framework with internationally recognised Cambridge programmes, giving our students the best of both worlds.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="p-8 rounded-2xl bg-cream-light border border-cream-dark">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">NG</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-maroon">Nigerian Curriculum (NERDC)</h3>
+          </div>
+          <p class="text-text-light leading-relaxed mb-4">
+            Our core curriculum follows the Nigerian Educational Research and Development Council (NERDC) framework, ensuring our students are thoroughly prepared for WAEC and NECO examinations.
+          </p>
+          <ul class="space-y-2">
+            {["English Language", "Mathematics", "Basic Science & Technology", "Social Studies", "Civic Education", "Computer Studies / ICT", "Christian Religious Studies", "Creative Arts"].map(subject => (
+              <li class="flex items-center gap-2 text-sm text-text-light">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>
+                {subject}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-cream-light border border-cream-dark">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
+              <span class="text-white font-bold text-sm">CIE</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-maroon">Cambridge International</h3>
+          </div>
+          <p class="text-text-light leading-relaxed mb-4">
+            As a Cambridge International partner school, we offer IGCSE and A-Level programmes that open doors to universities and careers worldwide.
+          </p>
+          <ul class="space-y-2">
+            {["Cambridge IGCSE Subjects", "Cambridge A-Level Programmes", "International Recognition", "Global University Access", "Critical Thinking Skills", "Research & Inquiry Methods", "Practical Laboratory Work", "Extended Projects"].map(item => (
+              <li class="flex items-center gap-2 text-sm text-text-light">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Levels Detail -->
+  <section class="py-20 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title text-center mb-16">Programmes by Level</h2>
+
+      <div class="space-y-12">
+        <!-- Early Years -->
+        <div class="bg-white p-8 md:p-10 rounded-2xl border border-cream-dark">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center shrink-0">
+              <span class="text-3xl">🌱</span>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-maroon mb-1">Early Years</h3>
+              <p class="text-gold font-medium text-sm mb-4">Pre-Nursery & Nursery | Ages 2 -- 5</p>
+              <p class="text-text-light leading-relaxed mb-4">
+                Our early years programme is inspired by the Montessori method, creating a warm and stimulating environment where young children develop essential skills through guided play, structured activities, and age-appropriate learning experiences. We focus on building curiosity, social skills, motor development, and a love for learning that carries through their entire educational journey.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {["Phonics & Early Literacy", "Numeracy Foundations", "Creative Play", "Social Development", "Motor Skills", "Music & Movement"].map(tag => (
+                  <span class="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary -->
+        <div class="bg-white p-8 md:p-10 rounded-2xl border border-cream-dark">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
+              <span class="text-3xl">📚</span>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-maroon mb-1">Primary School</h3>
+              <p class="text-gold font-medium text-sm mb-4">Basic 1 -- 6 | Ages 6 -- 11</p>
+              <p class="text-text-light leading-relaxed mb-4">
+                Our primary programme builds strong foundations in literacy, numeracy, sciences, and the arts. Following the NERDC curriculum, students develop critical thinking, communication skills, and a broad knowledge base. Computer/ICT education begins at this level, ensuring digital literacy from an early age.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {["English Language", "Mathematics", "Basic Science", "Social Studies", "ICT", "Christian Studies", "Creative Arts", "Physical Education"].map(tag => (
+                  <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Junior Secondary -->
+        <div class="bg-white p-8 md:p-10 rounded-2xl border border-cream-dark">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center shrink-0">
+              <span class="text-3xl">🔬</span>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-maroon mb-1">Junior Secondary</h3>
+              <p class="text-gold font-medium text-sm mb-4">JSS 1 -- 3 | Ages 12 -- 14</p>
+              <p class="text-text-light leading-relaxed mb-4">
+                At the junior secondary level, students experience an expanded academic programme that includes practical laboratory work in our science laboratory, more advanced ICT training, and exposure to a broader range of subjects. This level prepares students for the Basic Education Certificate Examination (BECE).
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {["Sciences", "Mathematics", "English", "Social Studies", "ICT", "Technical Drawing", "Home Economics", "Lab Practicals"].map(tag => (
+                  <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-medium rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Senior Secondary -->
+        <div class="bg-white p-8 md:p-10 rounded-2xl border border-cream-dark">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center shrink-0">
+              <span class="text-3xl">🎓</span>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-maroon mb-1">Senior Secondary</h3>
+              <p class="text-gold font-medium text-sm mb-4">SSS 1 -- 3 | Ages 15 -- 17</p>
+              <p class="text-text-light leading-relaxed mb-4">
+                Our senior secondary programme offers specialised academic tracks in Science, Arts, and Commercial streams. Students are prepared for WAEC, NECO, and Cambridge IGCSE/A-Level examinations. With dedicated laboratory sessions, career counselling, and university preparation support, we ensure our students are ready for the next chapter.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {["WAEC Preparation", "NECO Preparation", "Cambridge IGCSE", "A-Levels", "Science Track", "Arts Track", "Commercial Track", "Career Guidance"].map(tag => (
+                  <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  secondaryText?: string;
+  secondaryHref?: string;
+  showMotto?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText = "Apply Now",
+  ctaHref = "/admissions",
+  secondaryText = "Explore Academics",
+  secondaryHref = "/academics",
+  showMotto = true,
+} = Astro.props;
+---
+
+<section class="relative bg-gradient-to-br from-maroon via-maroon-dark to-maroon overflow-hidden">
+  <!-- Subtle Pattern Overlay -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, white 1px, transparent 1px); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+    <div class="max-w-3xl">
+      {showMotto && (
+        <p class="text-gold font-heading italic text-sm md:text-base mb-4 tracking-wide">
+          "Train up a child in the way he should go..." -- Proverbs 22:6
+        </p>
+      )}
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
+        {title}
+      </h1>
+
+      {subtitle && (
+        <p class="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
+          {subtitle}
+        </p>
+      )}
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-gold text-maroon-dark font-semibold rounded-lg hover:bg-gold-light transition-all duration-200 shadow-lg shadow-gold/20"
+        >
+          {ctaText}
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <a
+          href={secondaryHref}
+          class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200"
+        >
+          {secondaryText}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Bottom Edge -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 60V30C240 0 480 0 720 30C960 60 1200 60 1440 30V60H0Z" fill="white" />
+    </svg>
+  </div>
+</section>

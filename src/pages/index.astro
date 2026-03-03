@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Home" description="Faith Christian Schools, Karu -- Quality education rooted in Christian values. Pre-Nursery through Senior Secondary. Cambridge and NERDC curriculum.">
+  <Header slot="header" />
+
+  <!-- HERO -->
+  <Hero
+    title="Where Faith Meets Excellence in Education"
+    subtitle="Since 2003, Faith Christian Schools has been nurturing young minds with a curriculum that blends strong academic standards with enduring Christian values -- preparing children for meaningful participation in their communities and beyond."
+  />
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Why Choose Faith Christian Schools</h2>
+        <p class="section-subtitle mx-auto">
+          We integrate strong academic standards with Christian values to deliver quality, relevant education.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Dual Curriculum</h3>
+          <p class="text-text-light leading-relaxed">
+            Nigerian Curriculum (NERDC) combined with Cambridge International programmes (IGCSE/A-Levels), preparing students for both WAEC/NECO and international qualifications.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Christian Foundation</h3>
+          <p class="text-text-light leading-relaxed">
+            Rooted in biblical values with a nurturing environment that develops character, integrity, and purpose alongside academic excellence.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Modern Facilities</h3>
+          <p class="text-text-light leading-relaxed">
+            Science laboratory, computer/ICT room, library, sports facilities, sick bay, CCTV security, and reliable power supply for uninterrupted learning.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">All Education Levels</h3>
+          <p class="text-text-light leading-relaxed">
+            From Pre-Nursery and Nursery through Primary (Basic 1-6), Junior Secondary (JSS 1-3), to Senior Secondary (SSS 1-3) -- a complete educational journey.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Accredited & Approved</h3>
+          <p class="text-text-light leading-relaxed">
+            FCT Education Board approved, Department of Quality Assurance certified, with full WAEC/NECO inspection approval and Cambridge International partnership.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group p-8 rounded-2xl bg-cream-light border border-cream-dark hover:border-maroon/20 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl bg-maroon/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Safe & Secure</h3>
+          <p class="text-text-light leading-relaxed">
+            CCTV surveillance, dedicated security personnel, school bus transport, and a fully equipped sick bay with a school nurse for your child's wellbeing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION LEVELS -->
+  <section class="py-20 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Our Education Levels</h2>
+        <p class="section-subtitle mx-auto">
+          A complete educational journey from early years to senior secondary.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            level: "Early Years",
+            grades: "Pre-Nursery & Nursery",
+            description: "Montessori-inspired early learning that builds curiosity, motor skills, and social development in a nurturing environment.",
+            colour: "bg-green-50 border-green-200 text-green-800",
+            icon: "🌱",
+          },
+          {
+            level: "Primary",
+            grades: "Basic 1 -- 6",
+            description: "Strong foundational education in literacy, numeracy, sciences, and arts using the Nigerian curriculum (NERDC).",
+            colour: "bg-blue-50 border-blue-200 text-blue-800",
+            icon: "📚",
+          },
+          {
+            level: "Junior Secondary",
+            grades: "JSS 1 -- 3",
+            description: "Broadened academic exposure with science laboratory practicals, ICT, and preparation for Basic Education Certificate.",
+            colour: "bg-purple-50 border-purple-200 text-purple-800",
+            icon: "🔬",
+          },
+          {
+            level: "Senior Secondary",
+            grades: "SSS 1 -- 3",
+            description: "Specialised tracks preparing students for WAEC, NECO, and Cambridge IGCSE/A-Level examinations.",
+            colour: "bg-amber-50 border-amber-200 text-amber-800",
+            icon: "🎓",
+          },
+        ].map(item => (
+          <div class={`p-6 rounded-2xl border-2 ${item.colour} transition-transform hover:-translate-y-1 duration-300`}>
+            <span class="text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-heading font-bold text-xl mb-1">{item.level}</h3>
+            <p class="text-sm font-medium mb-3 opacity-80">{item.grades}</p>
+            <p class="text-sm leading-relaxed opacity-70">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSION CTA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-maroon to-maroon-dark rounded-3xl overflow-hidden">
+        <div class="px-8 py-16 md:px-16 md:py-20 flex flex-col md:flex-row items-center gap-10">
+          <div class="flex-1">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              Begin Your Child's Journey With Us
+            </h2>
+            <p class="text-white/80 text-lg leading-relaxed mb-2">
+              Admissions are open for the new academic session. Visit us to learn more about our programmes, meet our staff, and see our facilities firsthand.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a
+                href="/admissions"
+                class="inline-flex items-center justify-center px-8 py-3.5 bg-gold text-maroon-dark font-semibold rounded-lg hover:bg-gold-light transition-all duration-200"
+              >
+                Learn About Admissions
+              </a>
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden md:flex flex-col items-center justify-center text-center">
+            <div class="w-32 h-32 rounded-full bg-white/10 flex items-center justify-center mb-4">
+              <span class="text-5xl">🎓</span>
+            </div>
+            <p class="text-gold font-heading font-bold text-lg">Since 2003</p>
+            <p class="text-white/60 text-sm">Over 20 years of excellence</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES STRIP -->
+  <section class="py-16 bg-cream-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title mb-10">Our Facilities</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        {[
+          "Science Laboratory",
+          "Computer / ICT Room",
+          "Library",
+          "Sports Field",
+          "Sick Bay",
+          "School Bus",
+          "CCTV Security",
+          "Generator Power",
+          "Playground",
+        ].map(facility => (
+          <span class="px-5 py-2.5 bg-white rounded-full border border-cream-dark text-sm font-medium text-text-light hover:border-maroon/30 hover:text-maroon transition-colors">
+            {facility}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="w-12 h-12 rounded-full bg-maroon/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-maroon mb-2">Visit Us</h3>
+          <p class="text-text-light text-sm">Plot MF 31, ABG Hill, Behind Water Board, Karu, FCT</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-full bg-maroon/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-maroon mb-2">Call Us</h3>
+          <p class="text-text-light text-sm">
+            <a href="tel:+2348036012387" class="hover:text-maroon transition-colors">+234 803 601 2387</a>
+            <br />
+            <a href="tel:+2348033406414" class="hover:text-maroon transition-colors">+234 803 340 6414</a> (Admissions)
+          </p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-full bg-maroon/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-maroon mb-2">Email Us</h3>
+          <p class="text-text-light text-sm">
+            <a href="mailto:info@faithchristianschools.net" class="hover:text-maroon transition-colors">info@faithchristianschools.net</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
