@@ -4,6 +4,7 @@ interface Props {
   description?: string;
 }
 
+const base = import.meta.env.BASE_URL;
 const { title, description = "Faith Christian Schools, Karu -- Quality education rooted in Christian values since 2003." } = Astro.props;
 ---
 
@@ -14,7 +15,7 @@ const { title, description = "Faith Christian Schools, Karu -- Quality education
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#6B1D2A" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
 
     <!-- Google Fonts: Playfair Display + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
