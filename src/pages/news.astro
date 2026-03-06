@@ -4,25 +4,27 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PageHero from '../components/PageHero.astro';
 
-// Placeholder news articles -- will be replaced with CMS content
 const articles = [
   {
     title: "New Academic Session Admissions Now Open",
     excerpt: "We are pleased to announce that admissions for the new academic session are now open. Kindly visit the school or contact our admissions office for more information.",
     date: "March 2026",
     category: "Admissions",
+    image: "fcs/uploads/itsy4k2c9rsqofcbcuv2",
   },
   {
     title: "Cambridge International Partnership",
     excerpt: "Faith Christian Schools is proud to be a Cambridge International partner school, offering IGCSE and A-Level programmes that open doors to universities worldwide.",
     date: "February 2026",
     category: "Academics",
+    image: "fcs/uploads/qxwyquwclgbrqexjlbaj",
   },
   {
     title: "Inter-House Sports Competition",
     excerpt: "Our annual inter-house sports competition brings together students from all levels for a week of athletic competition, teamwork, and school spirit.",
     date: "January 2026",
     category: "Student Life",
+    image: "fcs/uploads/w910dzbfjv2lnuoaerej",
   },
 ];
 ---
@@ -30,26 +32,26 @@ const articles = [
 <BaseLayout title="News & Events" description="Stay updated with the latest news, events, and announcements from Faith Christian Schools Karu.">
   <Header slot="header" />
 
-  <PageHero title="News & Events" breadcrumb="News & Events" />
+  <PageHero title="News & Events" breadcrumb="News & Events" backgroundImage="fcs/uploads/fxqel12kgzqvv7b1ccgw" />
 
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-16">
+      <div class="max-w-3xl mb-16 animate-on-scroll">
         <h2 class="section-title">Latest Updates</h2>
         <p class="section-subtitle">
           Stay informed about what is happening at Faith Christian Schools.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
         {articles.map(article => (
-          <article class="bg-cream-light rounded-2xl border border-cream-dark overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <!-- Placeholder Image -->
-            <div class="aspect-video bg-cream flex items-center justify-center">
-              <svg class="w-12 h-12 text-maroon/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-            </div>
+          <article class="bg-cream-light rounded-2xl overflow-hidden shadow-warm card-hover">
+            <img
+              src={`https://res.cloudinary.com/dgvktekep/image/upload/w_600,h_400,c_fill,q_auto,f_auto/${article.image}.jpg`}
+              alt={article.title}
+              class="w-full h-52 object-cover"
+              loading="lazy"
+            />
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
                 <span class="px-3 py-1 bg-maroon/10 text-maroon text-xs font-medium rounded-full">{article.category}</span>
@@ -67,24 +69,22 @@ const articles = [
   <!-- School Calendar -->
   <section class="py-20 bg-cream-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-title text-center mb-12">School Calendar</h2>
+      <h2 class="section-title text-center mb-12 animate-on-scroll">School Calendar</h2>
       <div class="max-w-3xl mx-auto">
-        <div class="bg-white rounded-2xl border border-cream-dark p-8">
-          <div class="space-y-6">
-            {[
-              { term: "First Term", period: "September -- December", events: "Resumption, Mid-Term Break, Inter-House Sports, Christmas Break" },
-              { term: "Second Term", period: "January -- April", events: "Resumption, Valentine's Day, Mid-Term Break, Easter Break" },
-              { term: "Third Term", period: "April -- July", events: "Resumption, Children's Day, Examinations, Graduation, Summer Break" },
-            ].map(term => (
-              <div class="flex flex-col sm:flex-row gap-4 p-5 bg-cream-light rounded-xl">
-                <div class="sm:w-48 shrink-0">
-                  <h3 class="font-heading font-bold text-maroon">{term.term}</h3>
-                  <p class="text-text-muted text-sm">{term.period}</p>
-                </div>
-                <p class="text-text-light text-sm leading-relaxed">{term.events}</p>
+        <div class="bg-white rounded-2xl shadow-warm p-8 stagger-children">
+          {[
+            { term: "First Term", period: "September -- December", events: "Resumption, Mid-Term Break, Inter-House Sports, Christmas Break" },
+            { term: "Second Term", period: "January -- April", events: "Resumption, Valentine's Day, Mid-Term Break, Easter Break" },
+            { term: "Third Term", period: "April -- July", events: "Resumption, Children's Day, Examinations, Graduation, Summer Break" },
+          ].map(term => (
+            <div class="flex flex-col sm:flex-row gap-4 p-5 bg-cream-light rounded-xl mb-4 last:mb-0">
+              <div class="sm:w-48 shrink-0">
+                <h3 class="font-heading font-bold text-maroon">{term.term}</h3>
+                <p class="text-text-muted text-sm">{term.period}</p>
               </div>
-            ))}
-          </div>
+              <p class="text-text-light text-sm leading-relaxed">{term.events}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

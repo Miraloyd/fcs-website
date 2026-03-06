@@ -2,22 +2,35 @@
 interface Props {
   title: string;
   breadcrumb?: string;
+  backgroundImage?: string;
 }
 
 const base = import.meta.env.BASE_URL;
-const { title, breadcrumb } = Astro.props;
+const { title, breadcrumb, backgroundImage = "fcs/uploads/houzyuyprymrpdtntm7d" } = Astro.props;
+const bgUrl = `https://res.cloudinary.com/dgvktekep/image/upload/w_1920,h_600,c_fill,q_auto,f_auto/${backgroundImage}.jpg`;
 ---
 
-<section class="bg-gradient-to-r from-maroon to-maroon-dark py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative py-24 md:py-32 overflow-hidden">
+  <!-- Background Photo -->
+  <div class="absolute inset-0">
+    <img
+      src={bgUrl}
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-maroon-dark/85 via-maroon/75 to-maroon-dark/80"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {breadcrumb && (
-      <nav class="mb-3 text-sm">
+      <nav class="mb-4 text-sm">
         <a href={base} class="text-white/60 hover:text-gold transition-colors">Home</a>
         <span class="text-white/40 mx-2">/</span>
-        <span class="text-gold">{breadcrumb}</span>
+        <span class="text-gold font-medium">{breadcrumb}</span>
       </nav>
     )}
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white">
       {title}
     </h1>
   </div>

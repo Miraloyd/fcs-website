@@ -14,7 +14,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white border-b border-cream-dark sticky top-0 z-50">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/0">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo + School Name -->
@@ -22,13 +22,13 @@ const currentPath = Astro.url.pathname;
         <img
           src="https://res.cloudinary.com/dgvktekep/image/upload/w_60,h_60,c_fill,q_auto,f_auto/v1770294148/fcs/uploads/xxe18ouwcljc86y4wloy.jpg"
           alt="Faith Christian Schools Logo"
-          class="w-12 h-12 rounded-full object-cover ring-2 ring-maroon/20"
+          class="w-12 h-12 rounded-full object-cover ring-2 ring-white/30 shadow-lg"
           width="48"
           height="48"
         />
         <div>
-          <span class="text-maroon font-heading font-bold text-lg leading-tight block">Faith Christian Schools</span>
-          <span class="text-text-muted text-xs tracking-wide">Karu, FCT</span>
+          <span class="header-school-name text-white font-heading font-bold text-lg leading-tight block transition-colors duration-300">Faith Christian Schools</span>
+          <span class="header-location text-white/70 text-xs tracking-wide transition-colors duration-300">Karu, FCT</span>
         </div>
       </a>
 
@@ -38,10 +38,10 @@ const currentPath = Astro.url.pathname;
           <a
             href={link.href}
             class:list={[
-              "px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+              "nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300",
               currentPath === link.href
-                ? "bg-maroon text-white"
-                : "text-text hover:bg-cream hover:text-maroon"
+                ? "bg-white/20 text-white"
+                : "text-white/90 hover:bg-white/10 hover:text-white"
             ]}
           >
             {link.label}
@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname;
       <!-- CTA Button -->
       <a
         href={`${base}admissions/`}
-        class="hidden lg:inline-flex items-center px-5 py-2.5 bg-maroon text-white text-sm font-semibold rounded-lg hover:bg-maroon-dark transition-colors duration-200"
+        class="hidden lg:inline-flex items-center px-5 py-2.5 bg-gold text-maroon-dark text-sm font-semibold rounded-lg hover:bg-gold-light transition-all duration-200 shadow-lg"
       >
         Apply Now
       </a>
@@ -60,7 +60,7 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="lg:hidden p-2 rounded-lg text-text hover:bg-cream"
+        class="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -72,7 +72,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Nav -->
-  <div id="mobile-menu" class="lg:hidden hidden border-t border-cream-dark">
+  <div id="mobile-menu" class="lg:hidden hidden glass border-t border-cream-dark/50">
     <nav class="px-4 py-4 space-y-1">
       {navLinks.map(link => (
         <a
@@ -89,7 +89,7 @@ const currentPath = Astro.url.pathname;
       ))}
       <a
         href={`${base}admissions/`}
-        class="block px-4 py-3 mt-2 bg-maroon text-white text-sm font-semibold rounded-lg text-center hover:bg-maroon-dark transition-colors"
+        class="block px-4 py-3 mt-2 bg-gold text-maroon-dark text-sm font-semibold rounded-lg text-center hover:bg-gold-light transition-colors"
       >
         Apply Now
       </a>
@@ -98,8 +98,52 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
+  const header = document.getElementById('site-header');
+  const schoolName = header?.querySelector('.header-school-name');
+  const location = header?.querySelector('.header-location');
+  const navLinks = header?.querySelectorAll('.nav-link');
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+
+  function updateHeader() {
+    if (!header) return;
+    const scrolled = window.scrollY > 60;
+
+    if (scrolled) {
+      header.classList.add('glass', 'shadow-warm');
+      header.classList.remove('bg-white/0');
+      schoolName?.classList.remove('text-white');
+      schoolName?.classList.add('text-maroon');
+      location?.classList.remove('text-white/70');
+      location?.classList.add('text-text-muted');
+      navLinks?.forEach(link => {
+        link.classList.remove('text-white/90', 'text-white', 'hover:text-white', 'hover:bg-white/10', 'bg-white/20');
+        link.classList.add('text-text', 'hover:text-maroon', 'hover:bg-cream');
+        if (link.classList.contains('nav-link') && link.getAttribute('href') === window.location.pathname) {
+          link.classList.add('bg-maroon', 'text-white');
+          link.classList.remove('text-text');
+        }
+      });
+    } else {
+      header.classList.remove('glass', 'shadow-warm');
+      header.classList.add('bg-white/0');
+      schoolName?.classList.add('text-white');
+      schoolName?.classList.remove('text-maroon');
+      location?.classList.add('text-white/70');
+      location?.classList.remove('text-text-muted');
+      navLinks?.forEach(link => {
+        link.classList.add('text-white/90', 'hover:text-white', 'hover:bg-white/10');
+        link.classList.remove('text-text', 'hover:text-maroon', 'hover:bg-cream', 'bg-maroon');
+        if (link.getAttribute('href') === window.location.pathname) {
+          link.classList.add('bg-white/20', 'text-white');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
   btn?.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));

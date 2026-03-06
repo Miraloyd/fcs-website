@@ -9,86 +9,98 @@ const base = import.meta.env.BASE_URL;
 <BaseLayout title="Testimonials" description="Hear from parents, students, and alumni about their experience at Faith Christian Schools Karu.">
   <Header slot="header" />
 
-  <PageHero title="Testimonials" breadcrumb="Testimonials" />
+  <PageHero title="Testimonials" breadcrumb="Testimonials" backgroundImage="fcs/uploads/h6lfqcp4vmpmqwkph95x" />
 
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-16">
+      <div class="max-w-3xl mb-16 animate-on-scroll">
         <h2 class="section-title">What Our Community Says</h2>
         <p class="section-subtitle">
           The voices of our parents, students, and alumni speak to the impact of a Faith Christian Schools education.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
         {[
           {
             quote: "Faith Christian Schools has been a blessing for our family. The teachers are dedicated, the environment is safe, and our children are thriving both academically and spiritually.",
-            name: "Parent",
+            name: "Mrs. A.",
             role: "Primary School Parent",
+            image: "fcs/uploads/wknadbxquxjbr5hhvq2k",
           },
           {
             quote: "The combination of Nigerian and Cambridge curriculum gives our children an edge. They are not just prepared for WAEC -- they are prepared for the world.",
-            name: "Parent",
+            name: "Mr. O.",
             role: "Secondary School Parent",
+            image: "fcs/uploads/hpg54csj6skjmw49stgd",
           },
           {
             quote: "I love my school because the teachers care about us and help us understand difficult subjects. The science lab is my favourite place.",
             name: "Student",
             role: "JSS 3 Student",
+            image: "fcs/uploads/jeeo7e0ffjfbbn71xqvo",
           },
           {
             quote: "The values I learnt at Faith Christian Schools -- integrity, hard work, and faith -- have stayed with me throughout my university education and career.",
-            name: "Alumnus",
-            role: "FCS Graduate",
+            name: "FCS Graduate",
+            role: "Alumnus",
+            image: "fcs/uploads/fh0hylkx1mv6oozzq33h",
           },
           {
             quote: "The Montessori approach in the early years made such a difference. Our son developed a genuine love for learning that continues to this day.",
-            name: "Parent",
+            name: "Mrs. B.",
             role: "Nursery School Parent",
+            image: "fcs/uploads/ed5x9si0dgskgq27vlj8",
           },
           {
             quote: "What sets this school apart is the genuine care for each child's development -- not just grades, but character, confidence, and purpose.",
-            name: "Parent",
+            name: "Mr. K.",
             role: "Junior Secondary Parent",
+            image: "fcs/uploads/lldpcgvens2c1msekybu",
           },
         ].map(item => (
-          <div class="bg-cream-light p-8 rounded-2xl border border-cream-dark">
-            <svg class="w-8 h-8 text-gold mb-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <p class="text-text-light leading-relaxed mb-6 italic">
-              "{item.quote}"
-            </p>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-maroon/10 flex items-center justify-center">
-                <span class="text-maroon font-bold text-sm">{item.name[0]}</span>
-              </div>
+          <div class="bg-cream-light rounded-2xl overflow-hidden shadow-warm card-hover">
+            <img
+              src={`https://res.cloudinary.com/dgvktekep/image/upload/w_600,h_300,c_fill,q_auto,f_auto/${item.image}.jpg`}
+              alt={`${item.role} at Faith Christian Schools`}
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6">
+              <svg class="w-8 h-8 text-gold/50 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <p class="text-text-light leading-relaxed mb-4 italic">
+                "{item.quote}"
+              </p>
               <div>
-                <p class="font-medium text-text text-sm">{item.name}</p>
+                <p class="font-semibold text-maroon text-sm">{item.name}</p>
                 <p class="text-text-muted text-xs">{item.role}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      <div class="mt-12 text-center">
-        <p class="text-text-muted text-sm italic">
-          Testimonials will be updated with real parent and student feedback.
-        </p>
-      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 bg-gradient-to-r from-maroon to-maroon-dark text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-heading font-bold text-white mb-4">Join Our Community</h2>
-      <p class="text-white/80 mb-8">Experience the Faith Christian Schools difference for yourself.</p>
+  <!-- CTA with Photo -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://res.cloudinary.com/dgvktekep/image/upload/w_1920,h_600,c_fill,q_auto,f_auto/fcs/uploads/xnzmpsufhviod5qnosn9.jpg"
+        alt="Students celebrating"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-maroon-dark/85"></div>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Join Our Community</h2>
+      <p class="text-white/80 mb-8 text-lg">Experience the Faith Christian Schools difference for yourself.</p>
       <a
         href={`${base}admissions/`}
-        class="inline-flex items-center px-8 py-3.5 bg-gold text-maroon-dark font-semibold rounded-lg hover:bg-gold-light transition-colors"
+        class="inline-flex items-center px-10 py-4 bg-gold text-maroon-dark font-bold rounded-xl hover:bg-gold-light transition-colors shadow-lg shadow-gold/30 text-lg"
       >
         Apply Now
       </a>

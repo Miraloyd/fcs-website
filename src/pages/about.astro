@@ -8,14 +8,15 @@ import PageHero from '../components/PageHero.astro';
 <BaseLayout title="About Us" description="Learn about Faith Christian Schools Karu -- our history, mission, vision, and leadership. Providing quality Christian education since 2003.">
   <Header slot="header" />
 
-  <PageHero title="About Us" breadcrumb="About Us" />
+  <PageHero title="About Us" breadcrumb="About Us" backgroundImage="fcs/uploads/qytsfixc1en9spiezohi" />
 
-  <!-- History -->
+  <!-- History: Split Layout with Photo -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="section-title">Our Story</h2>
+        <div class="animate-on-scroll slide-left">
+          <span class="text-gold font-semibold text-sm uppercase tracking-widest">Our Story</span>
+          <h2 class="section-title mt-2">Over Two Decades of Nurturing Excellence</h2>
           <p class="text-text-light leading-relaxed mb-6">
             Founded in 2003, Faith Christian Schools began with a simple yet profound conviction: that every child deserves an education that nurtures both the mind and the spirit. What started as a modest school in Karu, Federal Capital Territory, has grown into a respected institution serving families across the region.
           </p>
@@ -26,16 +27,19 @@ import PageHero from '../components/PageHero.astro';
             Today, Faith Christian Schools offers a complete educational pathway from Pre-Nursery through Senior Secondary, with accreditation from the FCT Education Board, the Department of Quality Assurance, and partnerships with Cambridge International for IGCSE and A-Level programmes.
           </p>
         </div>
-        <div class="bg-cream-light rounded-3xl p-10 text-center">
-          <img
-            src="https://res.cloudinary.com/dgvktekep/image/upload/w_300,h_300,c_fill,q_auto,f_auto/v1770294148/fcs/uploads/xxe18ouwcljc86y4wloy.jpg"
-            alt="Faith Christian Schools Logo"
-            class="w-40 h-40 rounded-full object-cover mx-auto mb-6 ring-4 ring-maroon/20"
-            width="160"
-            height="160"
-          />
-          <p class="font-heading text-2xl font-bold text-maroon mb-2">Since 2003</p>
-          <p class="text-text-muted">Over 20 years of nurturing young minds</p>
+        <div class="animate-on-scroll slide-right">
+          <div class="relative">
+            <img
+              src="https://res.cloudinary.com/dgvktekep/image/upload/w_800,h_900,c_fill,q_auto,f_auto/fcs/uploads/b69gxyrqhsw5x3mt3amj.jpg"
+              alt="Faith Christian Schools campus exterior"
+              class="w-full rounded-2xl shadow-warm-lg object-cover h-[500px]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-6 -left-6 bg-maroon text-white p-6 rounded-2xl shadow-warm-lg">
+              <p class="text-4xl font-heading font-bold text-gold">2003</p>
+              <p class="text-white/80 text-sm">Year Established</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -44,67 +48,60 @@ import PageHero from '../components/PageHero.astro';
   <!-- Mission, Vision, Values -->
   <section class="py-20 bg-cream-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl border border-cream-dark">
-          <div class="w-12 h-12 rounded-xl bg-maroon flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Our Mission</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+        <div class="bg-white p-8 rounded-2xl shadow-warm card-hover border-t-4 border-maroon">
+          <h3 class="font-heading font-bold text-xl text-maroon mb-4">Our Mission</h3>
           <p class="text-text-light leading-relaxed">
             To provide quality, relevant education that integrates academic excellence with Christian values, equipping children with the knowledge, skills, and character to become responsible leaders and active contributors to society.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl border border-cream-dark">
-          <div class="w-12 h-12 rounded-xl bg-gold flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Our Vision</h3>
+        <div class="bg-white p-8 rounded-2xl shadow-warm card-hover border-t-4 border-gold">
+          <h3 class="font-heading font-bold text-xl text-maroon mb-4">Our Vision</h3>
           <p class="text-text-light leading-relaxed">
             To be a leading educational institution in the Federal Capital Territory, recognised for producing well-rounded graduates who excel academically and embody the values of faith, integrity, and service.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl border border-cream-dark">
-          <div class="w-12 h-12 rounded-xl bg-maroon-light flex items-center justify-center mb-5">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-maroon mb-3">Our Values</h3>
+        <div class="bg-white p-8 rounded-2xl shadow-warm card-hover border-t-4 border-maroon-light">
+          <h3 class="font-heading font-bold text-xl text-maroon mb-4">Our Values</h3>
           <ul class="text-text-light leading-relaxed space-y-2">
-            <li class="flex items-start gap-2"><span class="text-gold font-bold">·</span> Faith and spiritual growth</li>
-            <li class="flex items-start gap-2"><span class="text-gold font-bold">·</span> Academic excellence</li>
-            <li class="flex items-start gap-2"><span class="text-gold font-bold">·</span> Character development</li>
-            <li class="flex items-start gap-2"><span class="text-gold font-bold">·</span> Integrity and discipline</li>
-            <li class="flex items-start gap-2"><span class="text-gold font-bold">·</span> Community engagement</li>
+            <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span> Faith and spiritual growth</li>
+            <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span> Academic excellence</li>
+            <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span> Character development</li>
+            <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span> Integrity and discipline</li>
+            <li class="flex items-start gap-2"><span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span> Community engagement</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Motto -->
-  <section class="py-16 bg-gradient-to-r from-maroon to-maroon-dark text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Motto with Photo Background -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://res.cloudinary.com/dgvktekep/image/upload/w_1920,h_600,c_fill,q_auto,f_auto/fcs/uploads/plvv7mxlvhtbl0tt6czk.jpg"
+        alt="Students at assembly"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-maroon-dark/85"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
       <p class="text-gold text-sm font-medium tracking-widest uppercase mb-4">Our Motto</p>
-      <blockquote class="text-2xl md:text-3xl font-heading font-bold text-white italic leading-relaxed">
+      <blockquote class="text-2xl md:text-4xl font-heading font-bold text-white italic leading-relaxed">
         "Train up a child in the way he should go, and when he is old, he will not depart from it."
       </blockquote>
-      <p class="text-white/60 mt-4 font-heading">-- Proverbs 22:6</p>
+      <p class="text-white/60 mt-4 font-heading text-lg">-- Proverbs 22:6</p>
     </div>
   </section>
 
   <!-- Accreditations -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="section-title mb-12">Accreditations & Approvals</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <h2 class="section-title mb-12 animate-on-scroll">Accreditations & Approvals</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto stagger-children">
         {[
           "FCT Education Board Approved",
           "FCT Department of Quality Assurance (DQA)",
@@ -113,8 +110,8 @@ import PageHero from '../components/PageHero.astro';
           "WAEC / NECO Inspection Approval",
           "Cambridge International Partner",
         ].map(item => (
-          <div class="flex items-center gap-3 p-4 bg-cream-light rounded-xl border border-cream-dark">
-            <svg class="w-5 h-5 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="flex items-center gap-3 p-5 bg-cream-light rounded-xl border border-cream-dark card-hover">
+            <svg class="w-6 h-6 text-green-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span class="text-sm font-medium text-text">{item}</span>
