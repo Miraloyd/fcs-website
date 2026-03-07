@@ -20,11 +20,11 @@ const currentPath = Astro.url.pathname;
       <!-- Logo + School Name -->
       <a href={`${base}`} class="flex items-center gap-3 group">
         <img
-          src="https://res.cloudinary.com/dgvktekep/image/upload/w_60,h_60,c_fill,q_auto,f_auto/v1770294148/fcs/uploads/xxe18ouwcljc86y4wloy.jpg"
+          src="https://res.cloudinary.com/dgvktekep/image/upload/w_120,h_120,c_fill,q_auto,f_auto/v1770294148/fcs/uploads/xxe18ouwcljc86y4wloy.jpg"
           alt="Faith Christian Schools Logo"
-          class="w-12 h-12 rounded-full object-cover ring-2 ring-white/30 shadow-lg"
-          width="48"
-          height="48"
+          class="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover ring-2 ring-white/30 shadow-lg"
+          width="64"
+          height="64"
         />
         <div>
           <span class="header-school-name text-white font-heading font-bold text-lg leading-tight block transition-colors duration-300">Faith Christian Schools</span>
@@ -49,10 +49,10 @@ const currentPath = Astro.url.pathname;
         ))}
       </nav>
 
-      <!-- CTA Button -->
+      <!-- CTA Button (visible on all viewports) -->
       <a
         href={`${base}admissions/`}
-        class="hidden lg:inline-flex items-center px-5 py-2.5 bg-gold text-maroon-dark text-sm font-semibold rounded-lg hover:bg-gold-light transition-all duration-200 shadow-lg"
+        class="inline-flex items-center px-4 py-2 md:px-5 md:py-2.5 bg-gold text-maroon-dark text-xs md:text-sm font-semibold rounded-lg hover:bg-gold-light transition-all duration-200 shadow-lg"
       >
         Apply Now
       </a>
